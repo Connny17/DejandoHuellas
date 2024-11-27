@@ -5,7 +5,7 @@ class Database {
 private $hostname = "localhost";
 private $database = "u649901890_ADhuellas08"; //u378884828_p2
 private $username = "u649901890_AADhuellas07"; //u378884828_p2Admin
-private $password = "hG!2$KTI:"; //~2Tj^OPsW1
+private $password = "s]6Dq[LS"; //~2Tj^OPsW1
 private $charset = "utf8";
 
 public function conectar(){
