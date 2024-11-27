@@ -36,14 +36,160 @@ h1 {
     }
 }
 
+/* Estilos para los labels */
 label {
-    font-family: 'Open Sans', sans-serif; /* Usa una fuente legible y moderna */
-    font-size: 30px; /* Ajusta el tamaño de fuente para que sea fácilmente legible */
-    color: #333; /* Color gris oscuro para mantenerlo sobrio y profesional */
-    font-weight: bold; /* Hace que el label se destaque */
-    display: block; /* Hace que el label esté en una línea separada para buena alineación */
-    margin-bottom: 8px; /* Agrega espacio debajo para separación con los inputs */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 0.5s ease-in-out;
+    color: #ff6f61; /* Color llamativo */
 }
+
+/* Estilo para las secciones */
+form > div {
+    margin-bottom: 25px;
+    padding: 25px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.5s forwards ease-out;
+    border-left: 6px solid #ff6f61; /* Borde izquierdo para hacer la sección más visual */
+}
+
+/* Aplicar diferentes efectos a las secciones */
+form > div:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+form > div:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+form > div:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Animación de aparición de las secciones */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el botón de adopción */
+button {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+/* Efecto de hover para el botón */
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Efecto de sombra al pasar el ratón */
+}
+
+/* Efectos adicionales para los inputs */
+input[type="text"], input[type="email"], input[type="number"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 2px solid #f5a623; /* Borde color naranja brillante */
+    background-color: #f7f7f7;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Efectos de enfoque en los inputs */
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus {
+    border-color: #ff6f61; /* Borde en color rojo brillante */
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.6); /* Sombra sutil cuando el input está enfocado */
+}
+
+/* Estilo para las opciones de respuestas (radio/checkbox) */
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.options input[type="radio"], .options input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Separadores de sección */
+.section-divider {
+    width: 100%;
+    height: 3px;
+    background-color: #ff61b0;
+    margin: 20px 0;
+}
+
+section {
+    background-color: rgba(100, 100, 100, 0.85); /* Fondo oscuro translúcido */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+    position: relative; /* Necesario para la pseudo-clase ::before */
+    overflow: hidden; /* Asegura que no sobresalgan elementos */
+}
+
+/* Margen decorativo adornado */
+section::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px solid transparent; /* Bordes iniciales transparentes */
+    border-image: linear-gradient(45deg, #FFAFBD, #ffc3a0); /* Gradiente en el borde */
+    border-image-slice: 1; /* Asegura que el gradiente se aplique completamente */
+    border-radius: 15px; /* Bordes redondeados decorativos */
+    z-index: -1; /* Coloca el borde decorativo detrás del contenido */
+}
+
+
+/* Añadir más interacción con las preguntas */
+textarea {
+    padding: 12px;
+    border: 2px solid #f5a623;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.6);
+}
+
 
 /* Navbar */
 .navbar {
@@ -55,7 +201,7 @@ label {
     background-color: #CFF3FF; /* Mantiene el color de fondo */
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade sombra */
-    height: 80px; /* Ajusta la altura total del navbar */
+    height: 100px; /* Ajusta la altura total del navbar */
     align-items: center; /* Centra verticalmente los elementos */
     justify-content: space-between; /* Espacio entre los elementos */
 }
@@ -452,12 +598,38 @@ footer ul li a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+
+
+
 h2, legend {
-    text-align: center;
-    font-family: "Work Sans", Sans-serif;
-    font-size: 48px; /* Ajusta aquí el tamaño */
-    font-weight: 600;
+    text-align: center; /* Centra el texto */
+    font-family: "Work Sans", Sans-serif; /* Fuente moderna */
+    font-size: 56px; /* Tamaño grande */
+    font-weight: 700; /* Negrita */
+    color: #EC4899; /* Color de texto por defecto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para mayor profundidad */
+    background: linear-gradient(90deg, #EC4899, #e60ca5); /* Degradado */
+    -webkit-background-clip: text; /* Recorta el degradado al texto */
+    background-clip: text; /* Compatibilidad estándar (aunque no funciona en Firefox) */
+    -webkit-text-fill-color: transparent; /* Hace visible el degradado */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Efecto suave al pasar el mouse */
 }
+
+/* Efecto interactivo */
+h2:hover, legend:hover {
+    transform: scale(1.1); /* Agranda ligeramente el texto */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+
+
+
+
+
+
+
+
+
 
 .form-group {
     display: flex;
@@ -1050,13 +1222,424 @@ p {
     }
 
     h4 {
-    display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
+        display: block; /* Se asegura de que se comporte como un bloque */
+        margin-block-start: 1em; /* Espaciado superior */
+        margin-block-end: 1em; /* Espaciado inferior */
+        margin-inline-start: 0px; /* Sin margen a la izquierda */
+        margin-inline-end: 0px; /* Sin margen a la derecha */
+        font-family: "Work Sans", Sans-serif; /* Fuente moderna y elegante */
+        font-size: 24px; /* Tamaño suficiente para destacar, pero no dominante */
+        font-weight: 600; /* Negrita moderada para énfasis */
+        line-height: 1.8; /* Espaciado entre líneas para mayor legibilidad */
+        text-align: justify; /* Justificación para un aspecto limpio */
+        color: #4A5568; /* Un tono gris oscuro profesional y elegante */
+        background-color: #F7FAFC; /* Fondo claro para destacar el texto */
+        padding: 10px 15px; /* Espaciado interno para separar del borde */
+        border-left: 4px solid #EC4899; /* Barra de color rosa vibrante al lado izquierdo */
+        border-radius: 8px; /* Bordes redondeados para suavizar el diseño */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para destacar */
+    }
+    
+
+
+
+
+.navbar {
+    background-color: #CFF3FF !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/* Cambiar el color de las letras al pasar el mouse */
+.navbar a {
+    color: #000; /* Color predeterminado de los enlaces */
+    text-decoration: none; /* Opcional: elimina subrayado */
+    transition: color 0.3s ease; /* Animación suave para el cambio de color */
+}
+
+.navbar a:hover {
+    color: #EC4899; /* Color al pasar el mouse */
+}
+/* Estilo específico para el botón 'Inicio' */
+.navbar .nav-link.active {
+    color: #000; /* Color inicial del texto */
+    background-color: transparent; /* Sin fondo blanco */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilo al pasar el mouse sobre el enlace 'Inicio' */
+.navbar .nav-link.active:hover {
+    color: #EC4899; /* Color rosa al pasar el mouse */
+    text-decoration: none; /* Aseguramos que no haya subrayado */
+}
+/* Estilo para todos los enlaces en la barra de navegación */
+.navbar .nav-link {
+    font-family: "Work Sans", Sans-serif; /* Tipo de fuente */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: 600; /* Grosor de la fuente */
+    text-transform: capitalize; /* Capitaliza la primera letra */
+    font-style: normal; /* Estilo de fuente normal */
+    text-decoration: none; /* Elimina el subrayado */
+    line-height: 1em; /* Altura de la línea */
+    letter-spacing: 0px; /* Espaciado entre letras */
+    color: #000; /* Color inicial de las letras */
+    background-color: transparent; /* Sin fondo */
+}
+
+/* Estilo al pasar el mouse sobre todos los enlaces */
+.navbar .nav-link:hover {
+    color: #EC4899; /* Color rosa al pasar el mouse */
+    text-decoration: none; /* Aseguramos que no haya subrayado */
+}
+/* Contenedor del animal */
+.animal-container {
+    width: 100%;
+    max-width: 300px; /* Tamaño máximo del contenedor */
+    height: 350px; /* Ajusta la altura del contenedor para mantener un diseño coherente */
+    overflow: hidden;  /* Elimina cualquier contenido que se desborde del contenedor */
+    margin: 10px;  /* Espaciado entre los elementos */
+    border: 1px solid #ccc;  /* Borde alrededor del recuadro */
+    border-radius: 8px; /* Opcional: redondea las esquinas del contenedor */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilo para la imagen dentro del recuadro */
+.animal-image {
+    width: 100%;  /* La imagen ocupará todo el ancho del contenedor */
+    height: 100%; /* La imagen ocupará toda la altura del contenedor */
+    object-fit: contain; /* La imagen se ajustará sin recortarse, pero puede dejar espacios vacíos */
+    border-radius: 8px; /* Opcional: redondea las esquinas de la imagen */
+}
+/* Cambiar el estilo de las letras en el perfil */
+.perfil-titulo {
+    font-size: 24px;  /* Tamaño de la fuente del título */
+    font-weight: bold;  /* Estilo en negrita */
+    color: #ff00ae;  /* Color del texto */
+}
+
+.perfil-descripcion {
+    font-size: 16px;  /* Tamaño de la fuente para la descripción */
+    color: #ff0000;  /* Color de la descripción */
+    line-height: 1.6;  /* Espaciado entre líneas */
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Aumenta la altura de la franja azul */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantén los elementos alineados */
+    background-color: #CFF3FF; /* Azul claro */
+    padding: 20px 40px; /* Ajusta el espacio interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+#contact-heading {
+    all: unset; /* Elimina todos los estilos previamente aplicados */
+    display: block; /* Asegura que se comporte como un bloque */
+    font-size: 16px; /* Define un tamaño básico de fuente */
+    color: inherit; /* Usa el color del texto heredado del contenedor */
+}
+.contact {
+    all: revert; /* Resetea todos los estilos al valor predeterminado del navegador */
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: inherit;
 }
 
 
+/* Cambiar el tamaño del logo */
+.logo-img {
+    transform: translateY(-10px); /* Mueve 10px hacia arriba */
+    position: relative; /* Permite el desplazamiento */
+    left: 100px; /* Mueve la imagen 20px hacia la derecha */
+    top: 10px; /* Mueve la imagen 10px hacia abajo */
+    height: 80px; /* Ajusta el tamaño de la imagen */
+    height: 100px; /* Cambia el tamaño según lo necesario */
+    width: auto; /* Mantén la proporción */
+    display: block;
+}
+
+
+/* Estilo específico solo para el texto "Contacto" en el footer */
+.contact-title {
+    font-size: 20px; /* Tamaño diferente */
+    font-weight: normal; /* Menos negrita */
+    color: #333; /* Gris oscuro */
+    text-align: left; /* Alineación a la izquierda */
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    box-shadow: none; /* Sin sombra */
+}
+
+/* Margen decorativo para la sección de detalles */
+.detalle-mascota {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo claro */
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 20px auto; /* Centrado */
+    max-width: 900px; /* Ancho máximo */
+    border: 5px solid transparent; /* Espaciado del borde */
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #e918ca, #b411b2); /* Gradiente en los bordes */
+    background-origin: border-box;
+    background-clip: content-box, border-box; /* Aplica el gradiente solo al borde */
+}
+/* Contenedor de tarjetas */
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
+}
+
+/* Tarjeta */
+.card {
+    width: 100%; /* O ajusta el porcentaje según el diseño */
+    max-width: 300px; /* Limita el tamaño máximo de las tarjetas */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Efecto hover */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen */
+/* Imagen */
+.card img {
+    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 200px; /* Establece una altura máxima para evitar que crezca demasiado */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* Contenido */
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Título */
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Texto */
+.card-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Botón */
+.ver-mas {
+    align-self: center;
+    background-color: #ff6f61;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ver-mas:hover {
+    background-color: #e64a45;
+    transform: translateY(-2px);
+}
+
+
+
+/* Contenedor de imagen */
+.card img {
+    width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: 100%; /* La altura de la imagen será 100% del contenedor */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+    max-width: 100%; /* Asegura que la imagen no sobrepase el ancho */
+    max-height: 200px; /* Limita la altura máxima para evitar que la imagen sea demasiado grande */
+    object-position: center; /* Centra la imagen dentro de su contenedor */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes en la tarjeta */
+.card {
+    width: 100%; /* Asegura que la tarjeta ocupe todo el espacio disponible en su contenedor */
+    max-width: 320px; /* Limita el ancho máximo de la tarjeta */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Título */
+.card-title {
+    font-family: "Work Sans", Sans-serif;
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Texto */
+.card-text {
+    color: #032E42;
+    font-family: "Work Sans", Sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Botón */
+.ver-mas {
+    align-self: center;
+    background-color: #ff6f61;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ver-mas:hover {
+    background-color: #e64a45;
+    transform: translateY(-2px);
+}
+/* Efecto Hover sobre la tarjeta */
+.card:hover {
+    transform: translateY(-10px); /* La tarjeta sube un poco al pasar el mouse */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    animation: gradienteHover 4s ease infinite; /* Cambia el gradiente al hacer hover */
+}
+
+/* Animación para el gradiente en hover */
+@keyframes gradienteHover {
+    0% {
+        background: linear-gradient(135deg, #ff6f61, #ff9a9e);
+    }
+    25% {
+        background: linear-gradient(135deg, #ff9a9e, #f6b93b);
+    }
+    50% {
+        background: linear-gradient(135deg, #f6b93b, #6a89cc);
+    }
+    75% {
+        background: linear-gradient(135deg, #6a89cc, #1e3799);
+    }
+    100% {
+        background: linear-gradient(135deg, #1e3799, #ff6f61);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.detalle-mascota {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .detalle-mascota .titulo {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .detalle-mascota .imagen {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .detalle-mascota .imagen img {
+    max-width: 400px; /* Tamaño máximo en ancho */
+    max-height: 300px; /* Tamaño máximo en altura */
+    width: auto; /* Ajusta automáticamente el ancho */
+    height: auto; /* Ajusta automáticamente la altura */
+    display: block; /* Centra la imagen dentro del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto visual */
+  }
+  
+  
+  
+  .detalle-mascota .detalles {
+    margin-top: 20px;
+  }
+  
+  .detalle-mascota .detalles h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .detalle-mascota .detalles img {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .detalle-mascota .detalles .btn {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  

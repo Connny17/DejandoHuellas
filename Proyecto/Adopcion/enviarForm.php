@@ -43,6 +43,14 @@ $p18= $_POST['p18'];
 $p19= $_POST['p19'];
 $p20= $_POST['p20'];
 
+
+$nombreS= $_POST['nombre'];
+$nombreS= $_POST['nombre'];
+
+
+
+
+
 $estadoM = $_POST['estado'];
 $nombreM =trim($_POST['nombre']);
 $especieM = $_POST['especie'];
