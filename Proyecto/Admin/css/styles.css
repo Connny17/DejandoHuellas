@@ -1754,12 +1754,133 @@ progress {
   vertical-align: top;
   border-color: var(--bs-table-border-color);
 }
-.table > :not(caption) > * > *, .datatable-table > :not(caption) > * > * {
-  padding: 0.5rem 0.5rem;
-  background-color: var(--bs-table-bg);
-  border-bottom-width: 1px;
-  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+
+
+
+
+
+
+/* Estilos generales para la tabla */
+.table, .datatable-table {
+  width: 100%;
+  border-collapse: collapse; /* Evita los espacios entre celdas */
+  margin-top: 30px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05); /* Sombra más fuerte para profundidad */
+  border-radius: 10px; /* Bordes más redondeados */
+  overflow: hidden; /* Asegura que los bordes redondeados se vean correctamente */
 }
+
+.table > :not(caption) > * > * {
+  padding: 1.2rem; /* Aumenté el padding para darle más aire a las celdas */
+  background-color: #ffffff; /* Fondo blanco para las celdas */
+  color: #444; /* Color de texto más suave y cálido */
+  border-bottom: 1px solid #ddd; /* Borde sutil entre filas */
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.05); /* Sombra suave para las celdas */
+  text-align: left; /* Alineación del texto a la izquierda */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna, limpia y más estilizada */
+  font-size: 1.1rem; /* Un tamaño de fuente ligeramente más grande */
+  font-weight: 400; /* Peso normal, pero más elegante */
+  color: #333; /* Color más oscuro y elegante para el texto */
+  line-height: 1.6; /* Aumento de la altura de línea para mayor legibilidad */
+  letter-spacing: 0.5px; /* Un pequeño espaciado entre letras para que se vea más aireado */
+  transition: all 0.3s ease; /* Transición suave para efectos */
+}
+
+/* Efecto hover: mejora la interacción visual */
+.table > :not(caption) > * > *:hover {
+  color: #00796B; /* Color de texto verde oscuro cuando pasa el ratón */
+  background-color: #f0f0f0; /* Fondo gris muy suave cuando pasa el ratón */
+  transform: translateY(-3px); /* Efecto de desplazamiento hacia arriba */
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada al hacer hover */
+}
+
+
+/* Estilo para la primera fila (encabezado de la tabla) */
+.table th {
+  background-color: #f3009e; /* Fondo verde para los encabezados */
+  color: white; /* Color blanco para el texto */
+  font-weight: bold; /* Fuente en negrita para los encabezados */
+  text-transform: uppercase; /* Mayúsculas para los encabezados */
+  text-align: center; /* Alineación centrada */
+  padding: 1.5rem 1rem; /* Espacio adicional en los encabezados */
+  border-bottom: 2px solid #e2458b; /* Borde más grueso en los encabezados */
+  font-size: 1.1rem; /* Un poco más grande el texto de los encabezados */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en los encabezados */
+}
+
+/* Estilo para las celdas de los encabezados al pasar el ratón */
+.table th:hover {
+  background-color: #c3cf38; /* Color más oscuro al pasar el ratón */
+  cursor: pointer; /* Indicador de que el encabezado es interactivo */
+  transform: translateY(-2px); /* Efecto sutil de desplazamiento al hacer hover */
+}
+
+/* Estilo para filas alternadas */
+.table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Fondo gris muy claro para filas pares */
+}
+
+.table tr:nth-child(odd) {
+  background-color: #ffffff; /* Fondo blanco para filas impares */
+}
+
+/* Agregar bordes redondeados a las celdas de la tabla */
+.table td, .table th {
+  border-radius: 8px; /* Bordes redondeados para las celdas */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Estilo para el pie de la tabla */
+.table tfoot td {
+  font-weight: bold;
+  background-color: #f2f2f2; /* Fondo gris claro */
+  color: #333; /* Color de texto */
+  text-align: right; /* Alineación del pie de la tabla a la derecha */
+  padding: 1rem 1.5rem;
+  border-top: 2px solid #ddd; /* Borde superior */
+}
+
+/* Agregar una animación sutil en las filas cuando se carga la página */
+.table tr {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Animación para las filas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Agregar un color de borde para la tabla al pasar el ratón sobre ella */
+.table:hover {
+  border: 2px solid #4CAF50; /* Borde verde al pasar el ratón sobre la tabla */
+}
+
+/* Efecto de sombra en la tabla al pasar el ratón sobre ella */
+.table:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Sombra más prominente cuando se pasa el ratón */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .table > tbody, .datatable-table > tbody {
   vertical-align: inherit;
 }
@@ -1990,6 +2111,7 @@ progress {
   color: #6c757d;
 }
 
+/* Estilo del borde para .form-control y .datatable-input */
 .form-control, .datatable-input {
   display: block;
   width: 100%;
@@ -1997,16 +2119,34 @@ progress {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
-  background-color: #fff;
+  color: #212529; /* Color del texto */
+  background-color: #e7e5e5; /* Fondo blanco para el campo de texto */
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 1px solid #d3d7db; /* Borde gris claro por defecto */
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border-radius: 0.375rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem; /* Bordes redondeados para un diseño moderno */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transiciones suaves para borde y sombra */
 }
+
+/* Borde al tener el foco */
+.form-control:focus, .datatable-input:focus {
+  border-color: #5c9ded; /* Color suave al enfocar, un azul claro */
+  box-shadow: 0 0 0 0.2rem rgba(92, 157, 237, 0.25); /* Sombra suave de color azul claro */
+}
+
+/* Efecto hover para los inputs */
+.form-control:hover, .datatable-input:hover {
+  border-color: #5c9ded; /* Color suave para el borde cuando se pasa el ratón */
+}
+
+/* Borde cuando el campo está deshabilitado */
+.form-control:disabled, .datatable-input:disabled {
+  background-color: #f8f9fa; /* Fondo gris claro para los campos deshabilitados */
+  border-color: #e0e0e0; /* Borde gris claro cuando está deshabilitado */
+}
+
 @media (prefers-reduced-motion: reduce) {
   .form-control, .datatable-input {
     transition: none;
@@ -2861,21 +3001,60 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #c36;
-  --bs-btn-border-color: #c36;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #c36;
-  --bs-btn-hover-border-color: #c36;
+  --bs-btn-color: #fff; /* Color de texto blanco */
+  --bs-btn-bg: #c36; /* Color de fondo del botón */
+  --bs-btn-border-color: #c36; /* Color del borde */
+  --bs-btn-hover-color: #fff; /* Color del texto al hacer hover */
+  --bs-btn-hover-bg: #e74c3c; /* Fondo más oscuro al hacer hover */
+  --bs-btn-hover-border-color: #e74c3c; /* Borde más oscuro al hacer hover */
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0a58ca;
-  --bs-btn-active-border-color: #0a53be;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #0d6efd;
-  --bs-btn-disabled-border-color: #0d6efd;
+  --bs-btn-active-color: #fff; /* Color del texto cuando el botón está activo */
+  --bs-btn-active-bg: #c0392b; /* Fondo más oscuro cuando el botón está activo */
+  --bs-btn-active-border-color: #c0392b; /* Borde más oscuro cuando el botón está activo */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Sombra interna cuando está activo */
+  --bs-btn-disabled-color: #fff; /* Color del texto cuando el botón está deshabilitado */
+  --bs-btn-disabled-bg: #0d6efd; /* Fondo cuando el botón está deshabilitado */
+  --bs-btn-disabled-border-color: #0d6efd; /* Borde cuando el botón está deshabilitado */
+
+  padding: 0.75rem 1.25rem; /* Espaciado interior del botón */
+  font-size: 1.1rem; /* Tamaño de la fuente */
+  font-weight: 500; /* Peso de la fuente para hacerlo más llamativo */
+  border-radius: 0.375rem; /* Bordes redondeados */
+  border: 2px solid transparent; /* Borde transparente por defecto */
+  background-color: var(--bs-btn-bg);
+  color: var(--bs-btn-color);
+  transition: all 0.3s ease; /* Transición suave para todos los efectos */
+  text-transform: uppercase; /* Mayúsculas para darle un toque más moderno */
+  letter-spacing: 0.5px; /* Espaciado entre letras */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
 }
+
+.btn-primary:hover {
+  background-color: var(--bs-btn-hover-bg); /* Fondo más oscuro cuando se pasa el mouse */
+  border-color: var(--bs-btn-hover-border-color); /* Borde más oscuro en hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil al hacer hover */
+  transform: translateY(-3px); /* Efecto de desplazamiento hacia arriba */
+}
+
+.btn-primary:focus {
+  outline: none; /* Quita el borde de enfoque */
+  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5); /* Resalta el borde cuando está enfocado */
+}
+
+.btn-primary:active {
+  background-color: var(--bs-btn-active-bg); /* Fondo más oscuro cuando se hace clic */
+  border-color: var(--bs-btn-active-border-color); /* Borde más oscuro al hacer clic */
+  box-shadow: var(--bs-btn-active-shadow); /* Sombra interna cuando está activo */
+  transform: translateY(2px); /* Efecto de hundimiento al hacer clic */
+}
+
+.btn-primary:disabled {
+  background-color: var(--bs-btn-disabled-bg); /* Fondo cuando está deshabilitado */
+  border-color: var(--bs-btn-disabled-border-color); /* Borde cuando está deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor a no permitido */
+  opacity: 0.65; /* Reduce la opacidad cuando está deshabilitado */
+}
+
 
 .btn-secondary {
   --bs-btn-color: #fff;
@@ -3782,15 +3961,56 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
 }
+
+
 .navbar-brand {
-  padding-top: var(--bs-navbar-brand-padding-y);
-  padding-bottom: var(--bs-navbar-brand-padding-y);
-  margin-right: var(--bs-navbar-brand-margin-end);
-  font-size: var(--bs-navbar-brand-font-size);
-  color: var(--bs-navbar-brand-color);
+  padding-top: 10px; /* Ajusta el padding para evitar que toque el borde */
+  padding-bottom: 10px;
+  padding-left: 20px; /* Agrega un padding izquierdo para mejorar el espaciado */
+  padding-right: 20px;
+  
+  font-size: 1.5rem; /* Tamaño de fuente más grande para hacerlo llamativo */
+  font-weight: bold; /* Negrita para resaltar */
+  color: #000000; /* Color vibrante y moderno */
   text-decoration: none;
   white-space: nowrap;
+
+  /* Fondo con color suave para darle contraste */
+  background-color: rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; /* Bordes redondeados para suavizar el diseño */
+
+  /* Efecto sutil de sombra */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Transición suave para interacciones */
+  transition: all 0.3s ease;
 }
+
+/* Efecto hover para animar el color y la sombra */
+.navbar-brand:hover {
+  color: #fff; /* Cambia el color del texto al pasar el ratón */
+  background-color: #000000; /* Fondo vibrante al hacer hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+  transform: translateY(-3px); /* Levanta ligeramente el texto */
+}
+
+/* Asegúrate de que no haya ningún efecto de transformación en el navbar */
+.navbar, .navbar-toggler, .navbar-toggler-icon, .navbar-collapse {
+  transform: none !important; /* Elimina cualquier efecto de escala o transformación */
+  transition: none !important; /* Desactiva todas las transiciones */
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
 }
@@ -7188,10 +7408,24 @@ textarea.form-control-lg {
   border-left: 0 !important;
 }
 
+/* Borde con un toque sutil que combina con el diseño */
 .border-primary {
   --bs-border-opacity: 1;
-  border-color: #c36 !important;
+  border: 2px solid transparent; /* Borde transparente para un efecto más suave */
+  background-image: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradiente suave acorde con el diseño */
+  background-origin: border-box; /* El gradiente se aplica solo al borde */
+  background-clip: content-box; /* El fondo se recorta dentro del borde */
+  transition: all 0.3s ease; /* Transición suave */
+  padding: 8px; /* Espaciado interior más pequeño */
+  border-radius: 8px; /* Bordes redondeados para un look moderno */
 }
+
+.border-primary:hover {
+  background-image: linear-gradient(45deg, #ff7e5f, #feb47b); /* Mantener el mismo gradiente suave */
+  border-color: #ff7e5f; /* Cambio sutil de borde cuando se pasa el ratón */
+  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4); /* Sombra más suave para mantener la elegancia */
+}
+
 
 .border-secondary {
   --bs-border-opacity: 1;
@@ -8177,9 +8411,72 @@ textarea.form-control-lg {
 }
 
 .bg-dark {
+  /* Degradado de color combinando azul y negro */
   --bs-bg-opacity: 1;
-  background-color:#c36!important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, var(--bs-bg-opacity)) 0%, rgba(0, 36, 91, var(--bs-bg-opacity)) 100%);
+  
+  
+  /* Bordes redondeados */
+  border-radius: 16px; /* Más suavidad en las esquinas */
+  
+  /* Sombras para profundidad */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  
+  /* Transición suave para efectos */
+  transition: all 0.3s ease-in-out;
 }
+
+/* Efecto hover */
+.bg-dark:hover {
+  transform: scale(1.05); /* Aumento leve para atraer atención */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombras más intensas */
+  filter: brightness(1.15); /* Incremento de brillo */
+}
+
+/* Tipografía dentro de bg-dark */
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark p {
+  color: #ffffff; /* Blanco puro para contraste */
+  font-family: 'Roboto', sans-serif; /* Fuente moderna y estilizada */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidad al texto */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Enlaces dentro de bg-dark */
+.bg-dark a {
+  color: #ffd700; /* Amarillo dorado para destacar */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Resalta visualmente */
+  transition: color 0.3s ease-in-out;
+}
+
+.bg-dark a:hover {
+  color: #ffae00; /* Cambia a un dorado más cálido al pasar el cursor */
+}
+
+/* Botones dentro de bg-dark */
+.bg-dark .btn {
+  background: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
+  color: #ffffff; /* Texto blanco */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Bordes translúcidos */
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover en botones */
+.bg-dark .btn:hover {
+  background: rgba(255, 255, 255, 0.4); /* Fondo más claro */
+  color: #000000; /* Texto negro para contraste */
+  border-color: rgba(255, 255, 255, 0.5); /* Bordes más visibles */
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3); /* Sombras claras */
+}
+
+
 
 .bg-black {
   --bs-bg-opacity: 1;
@@ -10965,9 +11262,27 @@ body {
   width: 225px;
   margin: 0;
 }
+
+
 .sb-topnav.navbar-dark #sidebarToggle {
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffcc00;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
+
+/* Efecto hover para el botón */
+.sb-topnav.navbar-dark #sidebarToggle:hover {
+  color: #fff; /* Cambia a blanco cuando se pasa el ratón por encima */
+  background-color: #ff4e50; /* Fondo vibrante en hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+  transform: translateY(-3px); /* Levanta el botón al pasar el ratón */
+}
+
 .sb-topnav.navbar-light #sidebarToggle {
   color: #212529;
 }
@@ -11022,12 +11337,70 @@ body {
   background-color: #212529;
   color: rgba(255, 255, 255, 0.5);
 }
+
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
-  color: rgba(255, 255, 255, 0.25);
+  font-family: 'Poppins', sans-serif; /* Fuente moderna y estilizada */
+  font-size: 16px; /* Tamaño de texto ajustado */
+  color: rgba(255, 255, 255, 0.9); /* Blanco casi puro para destacar */
+  text-transform: uppercase; /* Texto en mayúsculas para resaltar */
+  letter-spacing: 2px; /* Espaciado entre letras para elegancia */
+  margin-bottom: 10px; /* Espaciado inferior para separación */
+  position: relative; /* Para animaciones */
+  overflow: hidden; /* Evita desbordamientos */
+  transition: color 0.3s ease, transform 0.3s ease; /* Animaciones suaves */
+}
+
+/* Efecto interactivo al pasar el cursor */
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading:hover {
+  color: #ffcc00; /* Color dorado al interactuar */
+  transform: scale(1.05); /* Ligero agrandamiento */
+}
+
+/* Línea decorativa animada debajo del texto */
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffcc00; /* Línea dorada */
+  transition: width 0.3s ease;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+/* Extender la línea decorativa al pasar el cursor */
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading:hover::after {
+  width: 100%;
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link {
-  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  font-size: 16px; /* Tamaño adecuado para una lectura cómoda */
+  color: rgba(255, 255, 255, 0.8); /* Blanco suave para contraste */
+  text-decoration: none; /* Elimina el subrayado */
+  padding: 10px 15px; /* Espaciado interno */
+  border: 3px solid transparent; /* Borde inicial (transparente) */
+  border-radius: 8px; /* Esquinas redondeadas */
+  transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease; /* Animaciones suaves */
 }
+
+/* Efecto al pasar el cursor */
+.sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+  color: #ffcc00; /* Cambia a dorado para interactividad */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo suave */
+  border: 3px solid #ffcc00; /* Borde dorado al interactuar */
+  transform: scale(1.03); /* Ligero agrandamiento */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Enlace activo */
+.sb-sidenav-dark .sb-sidenav-menu .nav-link.active {
+  color: #ffcc00; /* Color dorado destacado */
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo más marcado */
+  border: 3px solid #ffcc00; /* Borde dorado fijo */
+  font-weight: bold; /* Texto más destacado */
+}
+
 .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
   color: rgba(255, 255, 255, 0.25);
 }
@@ -11241,11 +11614,51 @@ body {
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
 }
-
-.sb-sidenav-menu{
-background-color: #c36;
+.sb-sidenav-menu {
+  background-color: #2c3e50; /* Azul oscuro elegante */
+  padding: 20px; /* Espaciado interno para contenido */
+  border-radius: 12px; /* Bordes redondeados para suavidad */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
 }
 
+
+/* Efecto al interactuar */
+.sb-sidenav-menu:hover {
+  background-color: #34495e; /* Azul oscuro más brillante al pasar el cursor */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* Elementos internos (títulos y enlaces) */
+.sb-sidenav-menu .sb-sidenav-menu-heading {
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  font-size: 18px; /* Tamaño claro y legible */
+  color: #ecf0f1; /* Blanco suave */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.sb-sidenav-menu .nav-link {
+  font-size: 16px; /* Tamaño legible */
+  color: #bdc3c7; /* Gris claro para contraste */
+  text-decoration: none; /* Sin subrayado */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animaciones */
+}
+
+/* Efecto al interactuar con los enlaces */
+.sb-sidenav-menu .nav-link:hover {
+  color: #ffcc00; /* Dorado interactivo */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+}
+
+/* Enlace activo */
+.sb-sidenav-menu .nav-link.active {
+  background-color: #16a085; /* Verde azulado llamativo */
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold; /* Resaltar el texto */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
 .ver-mas {
   background-color: #FFA500; /* Color original */
   color: white;
