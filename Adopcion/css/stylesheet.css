@@ -1388,7 +1388,7 @@ p {
     margin: 20px auto; /* Centrado */
     max-width: 900px; /* Ancho máximo */
     border: 5px solid transparent; /* Espaciado del borde */
-    background-image: linear-gradient(white, white), linear-gradient(45deg, #18e9e9c7, #18e9e9c7); /* Gradiente en los bordes */
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #e918ca, #b411b2); /* Gradiente en los bordes */
     background-origin: border-box;
     background-clip: content-box, border-box; /* Aplica el gradiente solo al borde */
 }
