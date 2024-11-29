@@ -93,7 +93,7 @@ if ($id == '' || $token == '') {
             <h4><strong>Cuidados especiales:</strong> <?php echo $cuidados ?></h4>
             <h4><strong>Historia de rescate:</strong> <?php echo $historia ?></h4>
             
-            <a href="Adopta.php" class="btn btn-warning">Adoptar</a>
+            <a href="Adopta.php?id_Mascotas=<?php echo $id;?>" class="btn btn-warning">Adoptar</a>
         </div>
     </div>
 </section>

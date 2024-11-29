@@ -1,8 +1,8 @@
 /* General */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Roboto", Sans-serif;
     background-color: #ffffff;
-    color: #333;
+    color: #000000;
     margin: 0;
     padding: 0;
     display: flex;
@@ -38,16 +38,16 @@ h1 {
 
 /* Estilos para los labels */
 label {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    color: #333;
+    font-family: "Roboto", Sans-serif;
+    font-size: 12px;
+    color:  #10316def;;
     font-weight: bold;
     display: block;
     margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
     animation: fadeIn 0.5s ease-in-out;
-    color: #ff6f61; /* Color llamativo */
+     /* Color llamativo */
 }
 
 /* Estilo para las secciones */
@@ -60,7 +60,7 @@ form > div {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 0.5s forwards ease-out;
-    border-left: 6px solid #ff6f61; /* Borde izquierdo para hacer la sección más visual */
+    border-left: 6px solid #2bc7e6f0; /* Borde izquierdo para hacer la sección más visual */
 }
 
 /* Aplicar diferentes efectos a las secciones */
@@ -114,19 +114,19 @@ button:hover {
 /* Efectos adicionales para los inputs */
 input[type="text"], input[type="email"], input[type="number"], textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: 5px;
+    margin-bottom: 5px;
     border-radius: 8px;
-    border: 2px solid #f5a623; /* Borde color naranja brillante */
-    background-color: #f7f7f7;
-    font-size: 16px;
+    border: 2px solid #c1beb9 ;/* Borde color naranja brillante */
+    background-color:#F7FAFC;
+    font-size: 12px;
     transition: all 0.3s ease;
 }
 
 /* Efectos de enfoque en los inputs */
 input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus {
-    border-color: #ff6f61; /* Borde en color rojo brillante */
-    box-shadow: 0 0 8px rgba(255, 111, 97, 0.6); /* Sombra sutil cuando el input está enfocado */
+    border-color: #2bc7e6f0; /* Borde en color rojo brillante */
+    box-shadow: 0 0 8px #2bc7e6f0; /* Sombra sutil cuando el input está enfocado */
 }
 
 /* Estilo para las opciones de respuestas (radio/checkbox) */
@@ -604,11 +604,11 @@ footer ul li a:hover {
 h2, legend {
     text-align: center; /* Centra el texto */
     font-family: "Work Sans", Sans-serif; /* Fuente moderna */
-    font-size: 56px; /* Tamaño grande */
+    font-size: 38px; /* Tamaño grande */
     font-weight: 700; /* Negrita */
     color: #EC4899; /* Color de texto por defecto */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para mayor profundidad */
-    background: linear-gradient(90deg, #EC4899, #e60ca5); /* Degradado */
+    background: linear-gradient(90deg, #0acaddc7, #0778ad); /* Degradado */
     -webkit-background-clip: text; /* Recorta el degradado al texto */
     background-clip: text; /* Compatibilidad estándar (aunque no funciona en Firefox) */
     -webkit-text-fill-color: transparent; /* Hace visible el degradado */
@@ -1643,3 +1643,6 @@ p {
     font-size: 1.2em;
   }
   
+  .h3, h3 {
+    font-size: calc(1rem + .6vw);
+}

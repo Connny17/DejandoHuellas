@@ -1,11 +1,6 @@
 <?php
 require "../conexion.php";
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
 $db = new Database();
 $con = $db->conectar();
 
@@ -38,25 +33,29 @@ $directorio="../archivos/";
 if(is_file($imagen)){
 
     if($tipoImagen=="jpg" or $tipoImagen=="png" or $tipoImagen=="jpeg" ){
+
+    
      
         //Eliminar imagen anterior
    try {
         unlink($nombre);
+
         
    } catch (\Throwable $th) {
     //throw $th;
    }
-   
    $ruta=$directorio.$id."N.".$tipoImagen;
 
     if(move_uploaded_file($imagen,$ruta)){
     
-    $actualizar=$con ->prepare("update mascotas set id_Estado_fk=$estadoM, nombre='$nombreM', id_Especie_fk=$especieM,
+
+    $actualizarImagen=$con ->prepare("update mascotas set id_Estado_fk=$estadoM, nombre='$nombreM', id_Especie_fk=$especieM,
    color='$color' ,id_Tamano_fk=$tamanoM, id_Edad_fk=$edadM, id_Sexo_fk=$sexoM, vacunado=$vacunadoM,  
-   desparasitado=$desparasitadoM, esterilizado=$esterilizadoM,
-   descripcion='$descripcionM', cuidados='$cuidadoM', historia_Rescate='$historiaM', foto='$ruta' where id_Mascotas=$id");
-    $actualizar->execute();  
-    echo "se actualizo";
+  desparasitado=$desparasitadoM, esterilizado=$esterilizadoM,
+  descripcion='$descripcionM', cuidados='$cuidadoM', historia_Rescate='$historiaM', foto='$ruta' where id_Mascotas=$id");
+    $actualizarImagen->execute();  
+
+
 
 }else{
       echo "<div class='alert alert-info'>Error al subir la imagen al servidor</div>";

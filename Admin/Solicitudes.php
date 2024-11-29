@@ -9,6 +9,7 @@ $sql = $con ->prepare("SELECT id_Mascotas, foto, estado_Adopcion, nombre from ma
 inner join estado on mascotas.id_Estado_fk=Estado.id_Estado");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <main>
@@ -28,11 +29,10 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 <table class="table">
 <thead class="table-dark">
     <tr>
-    <th scope="col">Id_Mascotas</th>
+    <th scope="col">Id_Mascota</th>
       <th scope="col">Foto</th>
-      <th scope="col">Estado de adopción</th>
       <th scope="col">Nombre</th>
-      <th scope="col"></th>
+      <th scope="col">Estado de adopción</th>
       <th scope="col"></th>
 
 
@@ -44,10 +44,11 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
     <?php foreach($resultado as $filas){ ?>
 <td><?php echo $filas['id_Mascotas'] ?></td>
 <td><img width="80" src="<?php echo $filas['foto'] ?>" ></td>
-<td><?php echo $filas['estado_Adopcion'] ?></td>
 <td><?php echo $filas['nombre'] ?></td>
+<td><?php echo $filas['estado_Adopcion'] ?></td>
 
-<td><a href="verSolicitud.php" class="btn btn-warning">Ver solicitudes</a></td>
+<td> <a href="verSolicitud.php?id_Mascotas=<?php echo $filas['id_Mascotas'];?>" class="ver-mas">Ver solicitud</a></td>
+
 </tr>
 
 
@@ -63,4 +64,3 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 
 <?php require "footer.php"; ?>
-

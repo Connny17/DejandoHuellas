@@ -3,12 +3,13 @@ require "header.php";
 require "../conexion.php";
 require "eliminar.php";
 
+
 $db = new Database();
 $con = $db->conectar();
 
 $sql = $con ->prepare("SELECT id_Mascotas, foto, estado_Adopcion, nombre, tipo_Especie,color, tamano, edad, sexo, vacunado,
 desparasitado, esterilizado, descripcion, cuidados, historia_Rescate from mascotas
-inner join estado on mascotas.id_Estado_fk=estado.id_Estado
+inner join estado on mascotas.id_Estado_fk=Estado.id_Estado
 inner join especie on mascotas.id_Especie_fk=especie.id_Especie
 inner join edad on mascotas.id_Edad_fk=edad.id_Edad
 inner join sexo on mascotas.id_Sexo_fk=sexo.id_Sexo
@@ -258,6 +259,26 @@ else{echo "No";} ?></td>
     </div>
     </div>
 </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <?php require "footer.php"; ?>
