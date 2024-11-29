@@ -135,7 +135,7 @@ else{echo "No";} ?></td>
 <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Nombre:</label>
-    <input type="text" class="form-control" id="exampleInputText" name="nombre">
+    <input type="text" class="form-control" id="exampleInputText" name="nombre" value="<?=$filas['nombre'] ?>">
   </div>
 
 
@@ -154,7 +154,7 @@ else{echo "No";} ?></td>
 <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Color:</label>
-    <input type="text" class="form-control" id="exampleInputText" name="color">
+    <input type="text" class="form-control" id="exampleInputText" name="color" value="<?=$filas['color'] ?>">
   </div>
 
   <div  class="mb-3"><label for="exampleInputText" class="form-label">Tamaño:</label></div>
@@ -226,21 +226,21 @@ else{echo "No";} ?></td>
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Descripcion:</label>
-  <textarea class="form-control" name="descripcion"id="exampleFormControlTextarea1" rows="4"></textarea>
+  <textarea class="form-control" name="descripcion"id="exampleFormControlTextarea1" rows="4" value="<?=$filas['descripcion'] ?>"></textarea>
 </div>
 
 <br>
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Cuidados especiales:</label>
-  <textarea class="form-control" name="cuidados"id="exampleFormControlTextarea1" rows="4"></textarea>
+  <textarea class="form-control" name="cuidados"id="exampleFormControlTextarea1" rows="4" value="<?=$filas['cuidados'] ?>"></textarea>
 </div>
 
 <br>
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Historia de rescate:</label>
-  <textarea class="form-control" name="historia"id="exampleFormControlTextarea1" rows="4"></textarea>
+  <textarea class="form-control" name="historia"id="exampleFormControlTextarea1" rows="4" value="<?=$filas['historia_Rescate'] ?>"></textarea>
 </div>
 
 <input type="submit" value="Actualizar" name="actualizar" class="form-control btn btn-success">

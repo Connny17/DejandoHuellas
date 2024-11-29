@@ -27,28 +27,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Telefono:</label>
-    <input type="number" class="form-control" id="exampleInputText" name="celular">
+    <input type="number" class="form-control" id="exampleInputText" name="celular" required>
   </div>
 
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">E-MAIL:</label>
-    <input type="email" class="form-control" id="exampleInputText" name="correo">
+    <input type="email" class="form-control" id="exampleInputText" name="correo" required>
   </div>
 
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Nombre de referencia</label>
-    <input type="text" class="form-control" id="exampleInputText" name="nReferencia">
+    <input type="text" class="form-control" id="exampleInputText" name="nReferencia" required>
   </div>
 
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Telefono de referencia:</label>
-    <input type="number" class="form-control" id="exampleInputText" name="numReferencia">
+    <input type="number" class="form-control" id="exampleInputText" name="numReferencia" required>
   </div>
-  <input type="submit" value="Siguiente">
-
+  <div class="d-flex justify-content-center">
+  <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+</div>
 
 </div>
 </form>

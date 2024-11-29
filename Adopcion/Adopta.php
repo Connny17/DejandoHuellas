@@ -37,35 +37,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Apellido paterno:</label>
-    <input type="text" class="form-control" id="exampleInputText" name="apellido_Paterno">
+    <input type="text" class="form-control" id="exampleInputText" name="apellido_Paterno" required>
   </div>
 
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Apellido materno:</label>
-    <input type="text" class="form-control" id="exampleInputText" name="apellido_Materno">
+    <input type="text" class="form-control" id="exampleInputText" name="apellido_Materno" required>
   </div>
 
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Nombre (s):</label>
-    <input type="text" class="form-control" id="exampleInputText" name="nombre">
+    <input type="text" class="form-control" id="exampleInputText" name="nombre" required>
   </div>
 
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Edad:</label>
-    <input type="number" class="form-control" id="exampleInputText" name="edad">
+    <input type="number" class="form-control" id="exampleInputText" name="edad" required>
   </div>
 
   <br>
-  <div class="mb-3">
-    <label for="exampleInputText" class="form-label">Ocupación:</label>
-    <input type="text" class="form-control" id="exampleInputText" name="ocupacion">
-  </div>
+<div class="mb-3">
+  <label for="exampleInputText" class="form-label">Ocupación:</label>
+  <input type="text" class="form-control" id="exampleInputText" name="ocupacion" required>
+</div>
 
-  <input type="submit" value="Siguiente">
-
+<!-- Botón centrado con clases personalizadas -->
+<div class="d-flex justify-content-center">
+  <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+</div>
 
 </div>
 </form>

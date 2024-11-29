@@ -1,13 +1,14 @@
 <?php
 require "header.html";
-
+session_start();
+header("Location: enviarForm.php"); 
 ?>
 
 <main>
 
 <h2> </h2><br> <h2></h2>
 <div class="row justify-content-center">
-<form class="col-md-10" action="acuerdoSolicitud.php" enctype="multipart/form-data" method="post" >
+<form class="col-md-10" action="enviarForm.php" enctype="multipart/form-data" method="post" >
 <div class="mb-3">
 <p>
 El adoptado se entregará al adoptante una vez aprobada esta solicitud, en caso de que varias
@@ -71,7 +72,7 @@ maltrato animal.
 </p>
 </div>
 
-
+<input type="submit" value="Enviar" name="Enviar">
 
 </div>
 </form>

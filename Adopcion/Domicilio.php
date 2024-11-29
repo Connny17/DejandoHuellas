@@ -24,23 +24,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Domicilio: </label>
-    <input type="text" class="form-control" id="exampleInputText" name="domicilio">
+    <input type="text" class="form-control" id="exampleInputText" name="domicilio" required>
   </div>
 
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Colonia: </label>
-    <input type="text" class="form-control" id="exampleInputText" name="colonia">
+    <input type="text" class="form-control" id="exampleInputText" name="colonia" required>
   </div>
 
   <br>
   <div class="mb-3">
     <label for="exampleInputText" class="form-label">Delegación o municipio: </label>
-    <input type="text" class="form-control" id="exampleInputText" name="municipio">
+    <input type="text" class="form-control" id="exampleInputText" name="municipio" required>
   </div>
 
-  <input type="submit" value="Siguiente">
-
+  <div class="d-flex justify-content-center">
+  <input type="submit" value="Siguiente" name="Siguiente" class="btn btn-siguiente">
+</div>
 
 </div>
 </form>

@@ -6,50 +6,62 @@ require "configC.php";
 $db = new Database();
 $con = $db->conectar();
 
-$sql = $con->prepare("SELECT id_Mascotas, foto, estado_Adopcion, nombre, tipo_Especie, color, edad, sexo, tamano 
-                      FROM mascotas
-                      INNER JOIN estado ON mascotas.id_Estado_fk = estado.id_Estado
-                      INNER JOIN especie ON mascotas.id_Especie_fk = especie.id_Especie
-                      INNER JOIN edad ON mascotas.id_Edad_fk = edad.id_Edad
-                      INNER JOIN sexo ON mascotas.id_Sexo_fk = sexo.id_Sexo
-                      INNER JOIN tamano ON mascotas.id_Tamano_fk = tamano.id_Tamano
-                      ORDER BY id_Mascotas ASC;");
+$sql = $con ->prepare("SELECT id_Mascotas, foto, estado_Adopcion, nombre, tipo_Especie, color, edad, sexo, tamano from mascotas
+inner join estado on  mascotas.id_Estado_fk=estado.id_Estado
+inner join especie on  mascotas.id_Especie_fk=especie.id_Especie
+inner join edad on mascotas.id_Edad_fk=edad.id_Edad
+inner join sexo on mascotas.id_Sexo_fk=sexo.id_Sexo
+inner join tamano on mascotas.id_Tamano_fk=tamano.id_Tamano order by id_Mascotas ASC;");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+
 <main>
-    <section class="adopcion">
+<section class="adopcion">
         <div class="container">
-            <h1><i class="fas fa-paw"></i> ¡Encuentra a tu nuevo mejor amigo!</h1>
+            <h1>¡Encuentra a tu nuevo mejor amigo!</h1>
+            <!--<div class="filtros">
+                <label for="especie">Especie:</label>
+                <select id="especie" aria-label="Filtrar por especie">
+                    <option value="todos">Todos</option>
+                    <option value="Perro">Perros</option>
+                    <option value="Gato">Gatos</option>
+                </select>
+                <label for="edad">Edad:</label>
+                <select id="edad" aria-label="Filtrar por edad">
+                    <option value="todas">Todas</option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Adulto">Adulto</option>
+                </select>
+            </div>-->
             <div class="container1">
-                <div class="row">
-                    <?php foreach ($resultado as $row) { ?>
-                        <div class="col">
-                            <div class="card">
-                                <img src="../archivos/<?php echo $row['foto']; ?>" alt="Imagen de <?php echo $row['nombre']; ?>">
-                                <div class="card-content">
-                                    <h5 class="card-title"><i class="fas fa-dog"></i><?php echo $row['nombre']; ?></h5>
-                                    <p class="card-text"><i class="fas fa-heart"></i>Estado de adopción: <?php echo $row['estado_Adopcion']; ?></p>
-                                    <p class="card-text"><i class="fas fa-paw"></i>Especie: <?php echo $row['tipo_Especie']; ?></p>
-                                    <p class="card-text"><i class="fas fa-palette"></i>Color: <?php echo $row['color']; ?></p>
-                                    <p class="card-text"><i class="fas fa-birthday-cake"></i>Edad: <?php echo $row['edad']; ?></p>
-                                    <p class="card-text"><i class="fas fa-venus-mars"></i>Sexo: <?php echo $row['sexo']; ?></p>
-                                    <p class="card-text"><i class="fas fa-ruler"></i>Tamaño: <?php echo $row['tamano']; ?></p>
-                                    <a href="Detalles.php?id_Mascotas=<?php echo $row['id_Mascotas']; ?>&token=<?php echo hash_hmac('sha1', $row['id_Mascotas'], KEY_TOKEN); ?>" class="ver-mas">
-                                        <i class="fas fa-info-circle"></i> Ver más
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
+                <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-5">
+                <?php foreach($resultado as $row){ ?>
+                <div class="col">
+                  <div class="card shadow-sm">
+                  <div class="card-body">
+                    <img src= "../archivos/<?php echo $row['foto'];?>" alt="" >
+                    <br> </br><h2 class="card-title"><?php echo $row['nombre']; ?></h2>
+                    <?php if($row['estado_Adopcion'] == "Disponible"): ?>
+    
+                    <?php endif; ?>
+              
+                    <div class="d-flex justify-content-center">
+                    <div class='btn-group'>
+                    <a href="Detalles.php?id_Mascotas=<?php echo $row['id_Mascotas'];?>&token=<?php echo hash_hmac('sha1', $row['id_Mascotas'], KEY_TOKEN);?>" class="ver-mas">Ver más                    </a>
+                    </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
+                  </div>
+                <?php }?>
+                </div>
+                </div>      
         </div>
     </section>
+
 </main>
-
-
+ 
 <?php
 require "footer.html";
-?>

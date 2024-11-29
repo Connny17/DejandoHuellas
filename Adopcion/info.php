@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   $_SESSION['cepillado'] = $_POST['cepillado']; 
   $_SESSION['limpieza'] = $_POST['limpieza']; 
   $_SESSION['alimentacion'] = $_POST['alimentacion']; 
-  header("Location: enviarForm.php"); 
+  header("Location: info.php"); 
   exit(); 
 }
 ?>
@@ -23,42 +23,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <form class="col-md-10" action="enviarForm.php" enctype="multipart/form-data" method="post" >
 
   <p>Es importante que estés consciente que al igual que nosotros el pequeño(a) necesitan 
-  de los siguientes</p> <br> </br>
+  de los siguientes</p> <br>
 
   <div class="form-check">
-  <input class="form-check-input" type="checkbox" name="visitas" value="1" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" name="visitas" value="1" id="flexCheckDefault" required>
   <label class="form-check-label" for="flexCheckDefault">Vistas periódicas al veterinario</label>  
 
-  <input class="form-check-input" type="checkbox" name="vacunacion" value="1" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" name="vacunacion" value="1" id="flexCheckDefault" required>
   <label class="form-check-label" for="flexCheckDefault">Vacunación</label>  
 
-  <input class="form-check-input" type="checkbox" name="paseos" value="1" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" name="paseos" value="1" id="flexCheckDefault" required>
   <label class="form-check-label" for="flexCheckDefault">Paseos con correa para perro</label>
 
-  <input class="form-check-input" type="checkbox" name="collar" value="1" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" name="collar" value="1" id="flexCheckDefault" required>
   <label class="form-check-label" for="flexCheckDefault">Uso de collar y placa id</label>  
 
-  <input class="form-check-input" type="checkbox" name="desparacitacion" value="1" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" name="desparacitacion" value="1" id="flexCheckDefault" required>
   <label class="form-check-label" for="flexCheckDefault">Desapasitación</label>  
 
-  <input class="form-check-input" type="checkbox" name="cepillado" value="1" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" name="cepillado" value="1" id="flexCheckDefault" required>
   <label class="form-check-label" for="flexCheckDefault">Cepillado de pelo</label>
 
-  <input class="form-check-input" type="checkbox" name="limpieza" value="1" id="flexCheckDefault">
+  <input class="form-check-input" type="checkbox" name="limpieza" value="1" id="flexCheckDefault" required>
   <label class="form-check-label" for="flexCheckDefault">Limpieza diaria de arenero(gato)</label>  
 
-  <input class="form-check-input" type="checkbox" name="alimentacion" value="1" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">Alimentación saludable</label>  
+  <input class="form-check-input" type="checkbox" name="alimentacion" value="1" id="flexCheckDefault" required>
+  <label class="form-check-label" for="flexCheckDefault">Alimentación saludable</label>  <br> <br>
+  <div class="d-flex justify-content-center">
+<input type="submit" value="Enviar" name="Enviar" class="btn btn-siguiente">
 </div>
 
-<input type="submit" value="Enviar" name="Enviar">
+
+</div>
+
+
 
 
 </div>
 </form>
 </main>
 </div>
-
 <?php
 require "footer.html";
 ?>
